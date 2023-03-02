@@ -238,7 +238,7 @@ void DrawLogo() {
 
     //fragColor = vec4(vec3(gl_FragCoord.x / ScreenSize.x), ColorModulator.a);
     vec2 coord = ScreenSize / 2.0;
-    float scale = ceil(max(ScreenSize.x, ScreenSize.y) / 160.0) * 4.0;
+    float scale = ceil(min(ScreenSize.x, ScreenSize.y) / 160.0) * 4.0;
     DrawRoughCircle(coord, sqrt(pow(ScreenSize.x, 2.0) + pow(ScreenSize.y, 2.0)) * sin(ColorModulator.a), vec4(ivec3(83, 125, 163) / 255.0, 1.0), fragColor);
     coord.y += -scale + scale * 2 * sin(ColorModulator.a * 2.0);
     DrawCape(coord, vec2(scale, scale));
