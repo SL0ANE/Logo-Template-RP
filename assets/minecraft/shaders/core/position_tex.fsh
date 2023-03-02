@@ -405,7 +405,7 @@ void DrawTmlInnerRing(vec2 coord, float scale) {
     vec4 backGroundColor = fragColor;
     vec4 outputColor;
 
-    float angle = -150.0 - 360 * (sin(ColorModulator.a * PI - PI / 2) / 2.0 + 0.5);
+    float angle = -30.0 - 120 * (sin(ColorModulator.a * PI - PI / 2) / 2.0 + 0.5);
 
     DrawSmoothCircle(coord, scale * 102.0, vec4(ivec3(90, 90, 90) / 255.0, 1.0), outputColor);
     if(outputColor.a > 0.0) fragColor = vec4(mix(fragColor.rgb, outputColor.rgb, outputColor.a), 1.0);
@@ -419,7 +419,7 @@ void DrawTmlInnerRing(vec2 coord, float scale) {
     }
 
     vec2 cutCircle = coord - vec2(0.0, scale * 79);
-    DrawSmoothCircle(RotateDot(cutCircle, coord, -360 * (sin(ColorModulator.a * PI - PI / 2) / 2.0 + 0.5)), scale * 38.0, backGroundColor, outputColor);
+    DrawSmoothCircle(RotateDot(cutCircle, coord, 120 - 120 * (sin(ColorModulator.a * PI - PI / 2) / 2.0 + 0.5)), scale * 38.0, backGroundColor, outputColor);
     if(outputColor.a > 0.0) fragColor = vec4(mix(fragColor.rgb, outputColor.rgb, outputColor.a), 1.0);
 
     DrawSmoothCircle(coord, scale * 72.0, vec4(ivec3(90, 90, 90) / 255.0, 1.0), outputColor);
