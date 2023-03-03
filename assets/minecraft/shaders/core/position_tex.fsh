@@ -493,7 +493,7 @@ void main() {
     else if(isMojang > 0.0) {
         if(gl_FragCoord.x + abs(gl_FragCoord.x - ScreenSize.x) != ScreenSize.x &&
            gl_FragCoord.y + abs(gl_FragCoord.y - ScreenSize.y) != ScreenSize.y) discard;
-        DrawTmlLogo();
+        DrawRealmsLogo();
     }
     else {
         if (color.a == 0.0) {
