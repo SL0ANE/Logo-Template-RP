@@ -5,7 +5,7 @@
 #define PI 3.14159265358
 #define FULLCOLOR vec4(1.0, 1.0, 1.0, 1.0)
 #define NULLCOLOR vec4(-1.0, 0.0, 0.0, 0.0)
-#define SAMPLERTIME 3
+#define SAMPLERTIME 3.0
 
 float samplerStep = 1.0 / (SAMPLERTIME + 1);
 
@@ -77,7 +77,7 @@ void DrawSmoothTriangle(in vec2 area[3], vec4 color, out vec4 outputColor) {
     }
     if(a == 0.0) outputColor = NULLCOLOR;
     else {
-        a /= (float)SAMPLERTIME * SAMPLERTIME;
+        a /= SAMPLERTIME * SAMPLERTIME;
         outputColor = vec4(color.rgb, a * color.a);
     }
 }
@@ -98,7 +98,7 @@ void DrawSmoothQuads(in vec2 area[4], vec4 color, out vec4 outputColor) {
     }
     if(a == 0.0) outputColor = NULLCOLOR;
     else {
-        a /= (float)SAMPLERTIME * SAMPLERTIME;
+        a /= SAMPLERTIME * SAMPLERTIME;
         outputColor = vec4(color.rgb, a * color.a);
     }
 }
@@ -135,7 +135,7 @@ void DrawSmoothCircle(in vec2 center, float radius, vec4 color, out vec4 outputC
     }
     if(a == 0.0) outputColor = NULLCOLOR;
     else {
-        a /= (float)SAMPLERTIME * SAMPLERTIME;
+        a /= SAMPLERTIME * SAMPLERTIME;
         outputColor = vec4(color.rgb, a * color.a);
     }
 }

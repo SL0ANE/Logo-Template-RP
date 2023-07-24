@@ -7,6 +7,7 @@ uniform mat4 ModelViewMat;
 uniform mat4 ProjMat;
 
 out vec4 vertexColor;
+out vec4 mask;
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);

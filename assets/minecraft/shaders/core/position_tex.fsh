@@ -1,5 +1,4 @@
-#version 330
-#extension GL_NV_shader_buffer_load : enable
+#version 150
 
 uniform sampler2D Sampler0;
 
@@ -13,7 +12,7 @@ in float isMojang;
 out vec4 fragColor;
 
 #moj_import <shape_drawer/generic.glsl>
-#moj_import <shape_drawer/archive/realms_cape.glsl>
+#moj_import <shape_drawer/archive/tml_logo.glsl>
 
 void main() {
     vec4 color = texture(Sampler0, texCoord0);
@@ -25,7 +24,7 @@ void main() {
            gl_FragCoord.y + abs(gl_FragCoord.y - ScreenSize.y) != ScreenSize.y) discard;
         
         
-        DrawRealmsLogo();
+        DrawTmlLogo();
     }
     else {
         if (color.a == 0.0) {
